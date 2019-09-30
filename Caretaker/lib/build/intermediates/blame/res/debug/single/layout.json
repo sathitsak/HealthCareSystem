@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "C:\\Users\\user\\Desktop\\wtf\\CameraPhotoUpload-master\\lib\\build\\intermediates\\res\\merged\\debug\\layout\\crop__activity_crop.xml",
+        "source": "C:\\Users\\user\\Desktop\\wtf\\CameraPhotoUpload-master\\lib\\src\\main\\res\\layout\\crop__activity_crop.xml"
+    },
+    {
+        "merged": "C:\\Users\\S\\Desktop\\CameraPhotoUpload-master\\lib\\build\\intermediates\\res\\merged\\debug\\layout\\crop__layout_done_cancel.xml",
+        "source": "C:\\Users\\S\\Desktop\\CameraPhotoUpload-master\\lib\\src\\main\\res\\layout\\crop__layout_done_cancel.xml"
+    },
+    {
+        "merged": "C:\\Users\\S\\Desktop\\CameraPhotoUpload-master\\lib\\build\\intermediates\\res\\merged\\debug\\layout\\crop__activity_crop.xml",
+        "source": "C:\\Users\\S\\Desktop\\CameraPhotoUpload-master\\lib\\src\\main\\res\\layout\\crop__activity_crop.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\wtf\\CameraPhotoUpload-master\\lib\\build\\intermediates\\res\\merged\\debug\\layout\\crop__layout_done_cancel.xml",
+        "source": "C:\\Users\\user\\Desktop\\wtf\\CameraPhotoUpload-master\\lib\\src\\main\\res\\layout\\crop__layout_done_cancel.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\wtf\\Caretaker\\lib\\build\\intermediates\\res\\merged\\debug\\layout\\crop__activity_crop.xml",
+        "source": "C:\\Users\\user\\Desktop\\wtf\\Caretaker\\lib\\src\\main\\res\\layout\\crop__activity_crop.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\wtf\\Caretaker\\lib\\build\\intermediates\\res\\merged\\debug\\layout\\crop__layout_done_cancel.xml",
+        "source": "C:\\Users\\user\\Desktop\\wtf\\Caretaker\\lib\\src\\main\\res\\layout\\crop__layout_done_cancel.xml"
+    }
+]

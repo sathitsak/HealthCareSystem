@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.user.patient" >
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <permission android:name="com.example.user.patient.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.example.user.patient.permission.C2D_MESSAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/patient"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity android:name=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service android:enabled="true" android:name=".MyService" />
+        <activity android:name=".DetailAlarm"
+            android:screenOrientation="portrait"
+            android:label="DetailAlarm"/>
+
+        <activity android:name=".Alarmon"
+            android:screenOrientation="portrait"
+            android:label="Alarmon"/>
+        <activity android:name=".ChooseMenu"
+            android:screenOrientation="portrait"
+            android:label="ChooseMenu"/>
+        <activity
+            android:name="FallWarningActivity"
+            android:screenOrientation="portrait"
+            android:label="Fall Warning" >
+        </activity>
+        <activity
+            android:name="FallWarning3Activity"
+            android:screenOrientation="portrait"
+            android:label="Fall Warning" >
+        </activity>
+        <activity
+            android:name="AccelerometerActivity"
+            android:screenOrientation="portrait"
+            android:label="Exercise Count" >
+        </activity>
+        <activity android:name=".CheckHisExcer" />
+        <activity android:name=".CheckStatus" />
+        <activity android:name=".Infodrug" />
+        <activity
+            android:name="Accelerometer2Activity"
+            android:screenOrientation="portrait"
+            android:label="Exercise Count" >
+        </activity>
+        <activity
+            android:name="AccelerometerMenuActivity"
+            android:screenOrientation="portrait"
+            android:label="Exercise Count" >
+        </activity>
+        <receiver android:name=".NotifyService">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.example.user.patient" />
+            </intent-filter>
+        </receiver>
+
+
+        <service
+            android:name=".GcmDownstreamService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".GcmTokenRefreshService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".GcmRegisterService"
+            android:exported="false" />
+
+    </application>
+
+</manifest>

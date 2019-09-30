@@ -1,0 +1,113 @@
+package com.example.user.caretaker;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.ContentValues;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+/**
+ * Created by user on 2/14/2016.
+ */
+public class Register_P extends Activity{
+
+    EditText username;
+    EditText password;
+    EditText repassword;
+    EditText email;
+    EditText tel;
+    Button register;
+    Button back;
+    String id_c;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.register_p);
+        Intent i=getIntent();
+        //Log.d("aa","bb"+i.getStringExtra("caretaker_id"));
+
+        username=(EditText)findViewById(R.id.username_p);
+        password=(EditText)findViewById(R.id.password_p);
+        repassword=(EditText)findViewById(R.id.repassword_p);
+        email=(EditText)findViewById(R.id.email_p);
+        tel=(EditText)findViewById(R.id.phone_p);
+        register=(Button)findViewById(R.id.register_p);
+        back=(Button)findViewById(R.id.back_p);
+        id_c=i.getStringExtra("caretaker_id");
+
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                register();
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
+
+    private void register(){
+
+        String user=username.getText().toString().trim();
+        String pass=password.getText().toString().trim();
+        String repass=repassword.getText().toString().trim();
+        String e_mail=email.getText().toString().trim();
+        String phonenum=tel.getText().toString().trim();
+        ContentValues params=new ContentValues();
+
+
+        final AlertDialog.Builder ad = new AlertDialog.Builder(this);
+        ad.setTitle("Error! ");
+        ad.setIcon(android.R.drawable.btn_star_big_on);
+        ad.setPositiveButton("Close", null);
+
+        if(user.length()==0){
+            ad.setMessage("กรุณาใส่ชื่อแอคเคาท์อีกครั้ง");
+            ad.show();
+            username.requestFocus();
+        }else if(pass.length()==0){
+            ad.setMessage("กรุณาใส่พาสเวิร์ดอีกครั้ง");
+            ad.show();
+            password.requestFocus();
+        }else if(repass.length()==0){
+            ad.setMessage("กรุณาใส่รีพาสเวิร์ดอีกครั้ง");
+            ad.show();
+            repassword.requestFocus();
+        }else if(!pass.equals(repass)){
+            ad.setMessage("กรุณาใส่พาสเวิร์ดให้ตรงกับรีพาสเวิร์ด");
+            ad.show();
+            repassword.requestFocus();
+        }else  if(e_mail.length()==0){
+            ad.setMessage("กรุณาใส่อีเมลล์อีกครั้ง");
+            ad.show();
+            email.requestFocus();
+        } else if(!Utility.validate(e_mail)) {
+            ad.setMessage("ไม่ถูกหลักของอีเมลล์");
+            ad.show();
+            email.requestFocus();
+        }else if(phonenum.length()==0){
+            ad.setMessage("กรุณาใส่เบอร์โทร");
+            ad.show();
+            tel.requestFocus();
+        }else{
+
+            params.put("user",user);
+            params.put("pass",pass);
+            params.put("email",e_mail);
+            params.put("tel",phonenum);
+            params.put("owner",id_c);
+
+            RegisterPatientTask task=new RegisterPatientTask(this,params);
+            task.execute();
+        }
+    }
+}

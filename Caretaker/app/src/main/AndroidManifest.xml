@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.user.caretaker">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/eyeicon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Register_C" />
+        <activity android:name=".List_Addpatient" />
+        <activity android:name=".Register_P" />
+        <activity android:name=".Menu_patient" />
+        <activity android:name=".CheckStatus" />
+        <activity android:name=".Assign" />
+        <activity android:name=".Addassign" />
+        <activity android:name=".UpdateAsign" />
+        <activity android:name=".CropSecondActivity" />
+        <activity android:name=".CropMainActivity" />
+        <activity android:name="com.soundcloud.android.crop.CropImageActivity" />
+        <activity
+            android:name=".UploadActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".UploadMainActivity"
+            android:screenOrientation="portrait" >
+
+        </activity>
+
+    </application>
+
+</manifest>

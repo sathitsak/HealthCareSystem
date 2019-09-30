@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+    <RelativeLayout tools:context=".CropMainActivity" android:paddingBottom="@dimen/activity_vertical_margin" android:baselineAligned="false" android:background="@color/view_background" android:paddingTop="@dimen/activity_vertical_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:paddingLeft="@dimen/activity_horizontal_margin" android:layout_height="fill_parent" android:layout_width="fill_parent" xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent" android:layout_height="fill_parent" android:background="@color/view_background" android:baselineAligned="false" android:orientation="vertical" > -->
+
+
+
+    -<LinearLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:orientation="vertical" android:gravity="center" android:layout_centerInParent="true">
+
+    <!-- Capture picture button -->
+
+
+    <Button android:background="@color/btn_bg" android:paddingRight="20dp" android:paddingLeft="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:textColor="@color/white" android:text="@string/btnTakePicture" android:layout_marginBottom="20dp" android:id="@+id/btnCapturePicture"/>
+
+    <!-- Record video button -->
+
+
+</LinearLayout>
+
+</RelativeLayout>
